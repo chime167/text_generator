@@ -3,8 +3,12 @@ from nltk.tokenize import WhitespaceTokenizer
 from nltk import trigrams
 from collections import defaultdict, Counter
 import random
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('filename', help='Enter the filename or path to file')
+args = parser.parse_args()
 
-with open(input(), 'r') as f:
+with open(args.filename, 'r') as f:
     file_content = f.read()
 tk = WhitespaceTokenizer()
 tokens = tk.tokenize(file_content)
@@ -48,6 +52,6 @@ def tri_count(tri):
         head_tail_dict[key] = {**Counter(value)}
     return {**head_tail_dict}
 
+if __name__ == '__main__': fetch(tokens)
 
-fetch(tokens)
 
