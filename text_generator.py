@@ -49,7 +49,7 @@ def tri_count(tri):
     for head1, head2, tail in tri:
         head_tail_dict[head1, head2].append(tail)  # head tuple as keys, list of all tails as values
     for key, value in head_tail_dict.items():  # turns value list into dict of counts for all the tails for each head
-        head_tail_dict[key] = {**Counter(value)}
+        head_tail_dict[key] = Counter(value)
     return head_tail_dict
 
 if __name__ == '__main__': fetch(tokens)
