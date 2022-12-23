@@ -35,7 +35,7 @@ def fetch(token_list):
             if len(sentence) > 4 and sentence[-1][-1] in '.?!':  # sentence is at least 5 words before any punctuation
                 break
             elif sentence[-1][-1] in '.?!':  # restart loop if punctuation occurs too soon
-                sentence = []
+                sentence[:] = []
                 head = generate_start(tri_count_dict)
                 sentence.append(' '.join(head))
                 continue
